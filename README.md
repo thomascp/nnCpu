@@ -1,6 +1,6 @@
 # nnCpu
 simple new ISA, and correspond implementation niannian CPU, niannian assembler
-
+```
 1. instr code:
 
 I-Type:
@@ -57,4 +57,4 @@ xxx means (eq, ne, lt, ge)
 SOP = 0x0 1 2 3
 
 jxxx rd, rs1, rs2
-
+```
