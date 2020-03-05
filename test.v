@@ -24,12 +24,17 @@ module test
 		for (i = 0; i < 32; i++)
 			$dumpvars(0, nnRvSoc.REG[i]);
 
-		for (i = 0; i < 1000; i++)
+		for (i = 0; i < 100000; i++)
 			#(1000000) CLK = !CLK;
 	end
 
-	wire [3:0] LED;
-	wire [1:0] KEY;
+	wire [7:0] LED;
+	reg  [1:0] KEY = 0;
+
+	initial
+	begin
+		#(10000000) KEY[0] <= 1;
+	end
 
 	nnRvSoc nnRvSoc(RST_N, CLK, KEY, LED);
 

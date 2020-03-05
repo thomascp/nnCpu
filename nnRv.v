@@ -28,12 +28,15 @@
 `define SOP_JUMP_LT	2
 `define SOP_JUMP_GE	3
 
+`define PF_KEY_IN	32'h80000000
+`define PF_LED_OUT	32'h80000004
+
 module nnRvSoc
 (
-	input		RST_N,
-	input		CLK,
-	input	[1:0]	KEY,
-	output	[3:0]	LED
+	input			RST_N,
+	input			CLK,
+	input	wire [1:0]	KEY,
+	output	reg  [7:0]	LED
 );
 	reg [31:0] RAM [0:`RAM_SIZE-1];
 	reg [31:0] REG [0:`REG_NUM-1];
@@ -67,6 +70,8 @@ module nnRvSoc
 
 	wire [2:0]  oper_mop	= instr_oper[7:5];
 	wire [4:0]  oper_sop	= instr_oper[4:0];
+
+	wire [31:0] ldr_str_addr= REG[instr_rs1] + REG[instr_rs2];
 
 	wire memory_stall = 0;
 	wire jump_stall = (oper_mop == `MOP_JUMP) && (
@@ -121,8 +126,19 @@ module nnRvSoc
 			if (oper_mop == `MOP_MEMY)
 			begin
 				case (oper_sop)
-					`SOP_MEMY_L	: REG[instr_rd] <= RAM[REG[instr_rs1][31:2] + REG[instr_rs2][31:2]];
-					`SOP_MEMY_S	: RAM[REG[instr_rs1][31:2] + REG[instr_rs2][31:2]] <= REG[instr_rd];
+					`SOP_MEMY_L	:
+							if (ldr_str_addr == `PF_KEY_IN)
+								REG[instr_rd] <= {30'd0, KEY};
+							else if (ldr_str_addr == `PF_LED_OUT)
+								REG[instr_rd] <= {24'd0, LED};
+							else
+								REG[instr_rd] <= RAM[ldr_str_addr[31:2]];
+
+					`SOP_MEMY_S	:
+							if (ldr_str_addr == `PF_LED_OUT)
+								LED <= REG[instr_rd][7:0];
+							else
+								RAM[ldr_str_addr[31:2]] <= REG[instr_rd];
 				endcase
 			end
 		end
