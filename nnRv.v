@@ -30,72 +30,144 @@
 
 `define PF_KEY_IN	32'h80000000
 `define PF_LED_OUT	32'h80000004
+`define PF_VGA_X	32'h80001000
+`define PF_VGA_Y	32'h80001004
 
 module nnRvSoc
 (
 	input		RST_N,
 	input		CLK,
-	input     [1:0]	KEY,
-	output    [7:0]	LED
+	input     [3:0]	KEY,
+	output    [7:0]	LED,
+	output   [31:0] VGA_X,
+	output   [31:0] VGA_Y
 );
 	reg [31:0] RAM [0:`RAM_SIZE-1];
 	reg [31:0] REG [0:`REG_NUM-1];
 	reg [31:0] jump_pc;
 
-	reg [31:0] OUTPUT;
+	reg [31:0] LED_OUTPUT;
+	reg [31:0] VGA_X_OUTPUT;
+	reg [31:0] VGA_Y_OUTPUT;
 
-	assign LED = OUTPUT[7:0];
+	assign LED = LED_OUTPUT[7:0];
+	assign VGA_X = VGA_X_OUTPUT;
+	assign VGA_Y = VGA_Y_OUTPUT;
 
 	integer i;
 	initial
 	begin
-	   OUTPUT = 0;
-		RAM[00]=32'h20080000;
-		RAM[01]=32'h20100000;
-		RAM[02]=32'h20180000;
-		RAM[03]=32'h00180080;
-		RAM[04]=32'h20200000;
-		RAM[05]=32'h01208000;
-		RAM[06]=32'h20280000;
-		RAM[07]=32'h01288000;
-		RAM[08]=32'h00280004;
-		RAM[09]=32'h20300000;
-		RAM[10]=32'h00300001;
-		RAM[11]=32'h00500001;
-		RAM[12]=32'h41514000;
-		RAM[13]=32'h40390000;
-		RAM[14]=32'h20400000;
-		RAM[15]=32'h00400001;
-		RAM[16]=32'h25420e00;
-		RAM[17]=32'h00480070;
-		RAM[18]=32'h01480000;
-		RAM[19]=32'h614a0000;
-		RAM[20]=32'h00400002;
-		RAM[21]=32'h25420e00;
-		RAM[22]=32'h00480088;
-		RAM[23]=32'h01480000;
-		RAM[24]=32'h614a0000;
-		RAM[25]=32'h00480094;
-		RAM[26]=32'h01480000;
-		RAM[27]=32'h614fc000;
-		RAM[28]=32'h40394000;
-		RAM[29]=32'h2239cc00;
-		RAM[30]=32'h41394000;
-		RAM[31]=32'h00480094;
-		RAM[32]=32'h01480000;
-		RAM[33]=32'h614fc000;
-		RAM[34]=32'h40394000;
-		RAM[35]=32'h2339cc00;
-		RAM[36]=32'h41394000;
-		RAM[37]=32'h20100000;
-		RAM[38]=32'h004800a0;
-		RAM[39]=32'h01480000;
-		RAM[40]=32'h20108c00;
-		RAM[41]=32'h62488600;
-		RAM[42]=32'h20480000;
-		RAM[43]=32'h00480034;
-		RAM[44]=32'h01480000;
-		RAM[45]=32'h614fc000;
+		LED_OUTPUT = 0;
+		VGA_X_OUTPUT = 0;
+		VGA_Y_OUTPUT = 0;
+	end
+
+	initial
+	begin
+		RAM[000]=32'h20080000;
+		RAM[001]=32'h20100000;
+		RAM[002]=32'h01208000;
+		RAM[003]=32'h00200000;
+		RAM[004]=32'h01288000;
+		RAM[005]=32'h00281000;
+		RAM[006]=32'h01308000;
+		RAM[007]=32'h00301004;
+		RAM[008]=32'h20380000;
+		RAM[009]=32'h00380001;
+		RAM[010]=32'h20400000;
+		RAM[011]=32'h00400010;
+		RAM[012]=32'h00080000;
+		RAM[013]=32'h01080014;
+		RAM[014]=32'h41094000;
+		RAM[015]=32'h41098000;
+		RAM[016]=32'h40090000;
+		RAM[017]=32'h20100000;
+		RAM[018]=32'h00100001;
+		RAM[019]=32'h25108200;
+		RAM[020]=32'h001800a4;
+		RAM[021]=32'h01180000;
+		RAM[022]=32'h61188000;
+		RAM[023]=32'h00100002;
+		RAM[024]=32'h25108200;
+		RAM[025]=32'h001800d8;
+		RAM[026]=32'h01180000;
+		RAM[027]=32'h61188000;
+		RAM[028]=32'h00100004;
+		RAM[029]=32'h25108200;
+		RAM[030]=32'h0018010c;
+		RAM[031]=32'h01180000;
+		RAM[032]=32'h61188000;
+		RAM[033]=32'h00100008;
+		RAM[034]=32'h25108200;
+		RAM[035]=32'h00180140;
+		RAM[036]=32'h01180000;
+		RAM[037]=32'h61188000;
+		RAM[038]=32'h00180174;
+		RAM[039]=32'h01180000;
+		RAM[040]=32'h611fc000;
+		RAM[041]=32'h40094000;
+		RAM[042]=32'h20100000;
+		RAM[043]=32'h0010ffff;
+		RAM[044]=32'h25188200;
+		RAM[045]=32'h2118ce00;
+		RAM[046]=32'h23105000;
+		RAM[047]=32'h21108e00;
+		RAM[048]=32'h22109000;
+		RAM[049]=32'h26088600;
+		RAM[050]=32'h41094000;
+		RAM[051]=32'h00180174;
+		RAM[052]=32'h01180000;
+		RAM[053]=32'h611fc000;
+		RAM[054]=32'h40094000;
+		RAM[055]=32'h20100000;
+		RAM[056]=32'h0010ffff;
+		RAM[057]=32'h25188200;
+		RAM[058]=32'h2018ce00;
+		RAM[059]=32'h23105000;
+		RAM[060]=32'h20108e00;
+		RAM[061]=32'h22109000;
+		RAM[062]=32'h26088600;
+		RAM[063]=32'h41094000;
+		RAM[064]=32'h00180174;
+		RAM[065]=32'h01180000;
+		RAM[066]=32'h611fc000;
+		RAM[067]=32'h40098000;
+		RAM[068]=32'h20100000;
+		RAM[069]=32'h0010ffff;
+		RAM[070]=32'h25188200;
+		RAM[071]=32'h2118ce00;
+		RAM[072]=32'h23105000;
+		RAM[073]=32'h21108e00;
+		RAM[074]=32'h22109000;
+		RAM[075]=32'h26088600;
+		RAM[076]=32'h41098000;
+		RAM[077]=32'h00180174;
+		RAM[078]=32'h01180000;
+		RAM[079]=32'h611fc000;
+		RAM[080]=32'h40098000;
+		RAM[081]=32'h20100000;
+		RAM[082]=32'h0010ffff;
+		RAM[083]=32'h25188200;
+		RAM[084]=32'h2018ce00;
+		RAM[085]=32'h23105000;
+		RAM[086]=32'h20108e00;
+		RAM[087]=32'h22109000;
+		RAM[088]=32'h26088600;
+		RAM[089]=32'h41098000;
+		RAM[090]=32'h00180174;
+		RAM[091]=32'h01180000;
+		RAM[092]=32'h611fc000;
+		RAM[093]=32'h20100000;
+		RAM[094]=32'h00180188;
+		RAM[095]=32'h01180000;
+		RAM[096]=32'h20080000;
+		RAM[097]=32'h00080080;
+		RAM[098]=32'h20108e00;
+		RAM[099]=32'h62188200;
+		RAM[100]=32'h20180000;
+		RAM[101]=32'h00180040;
+		RAM[102]=32'h01180000;
+		RAM[103]=32'h611fc000;
 	end
 
 	initial
@@ -175,15 +247,23 @@ module nnRvSoc
 				case (oper_sop)
 					`SOP_MEMY_L	:
 							if (ldr_str_addr == `PF_KEY_IN)
-								REG[instr_rd] <= {30'd0, KEY};
+								REG[instr_rd] <= {28'd0, KEY};
 							else if (ldr_str_addr == `PF_LED_OUT)
-								REG[instr_rd] <= OUTPUT;
+								REG[instr_rd] <= LED_OUTPUT;
+							else if (ldr_str_addr == `PF_VGA_X)
+								REG[instr_rd] <= VGA_X_OUTPUT;
+							else if (ldr_str_addr == `PF_VGA_Y)
+								REG[instr_rd] <= VGA_Y_OUTPUT;
 							else
 								REG[instr_rd] <= RAM[ldr_str_addr[31:2]];
 
 					`SOP_MEMY_S	:
 							if (ldr_str_addr == `PF_LED_OUT)
-								OUTPUT <= REG[instr_rd];
+								LED_OUTPUT <= REG[instr_rd];
+							else if (ldr_str_addr == `PF_VGA_X)
+								VGA_X_OUTPUT <= REG[instr_rd];
+							else if (ldr_str_addr == `PF_VGA_Y)
+								VGA_Y_OUTPUT <= REG[instr_rd];
 							else
 								RAM[ldr_str_addr[31:2]] <= REG[instr_rd];
 				endcase

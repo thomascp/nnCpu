@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1583536258">
+  <File Type="VDS-TIMING-PB" Name="nexys_a7_nnCpu_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="nexys_a7_nnCpu_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="nexys_a7_nnCpu.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="nexys_a7_nnCpu_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="nexys_a7_nnCpu_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="nexys_a7_nnCpu_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="nexys_a7_nnCpu.vds"/>
+  <File Type="REPORTS-TCL" Name="nexys_a7_nnCpu_reports.tcl"/>
+  <File Type="PA-TCL" Name="nexys_a7_nnCpu.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/nnCpu/nnRv.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../nnRv.v"/>
+        <Attr Name="ImportTime" Val="1583534196"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/nnCpu/vga800x600.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../vga800x600.v"/>
+        <Attr Name="ImportTime" Val="1583529611"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/nnCpu/vgaTop.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../vgaTop.v"/>
+        <Attr Name="ImportTime" Val="1583533772"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/nnCpu/nexys-a7-vga.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../nexys-a7-vga.v"/>
+        <Attr Name="ImportTime" Val="1583534546"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="nexys_a7_nnCpu"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/nnCpu/Nexys-A7-100T-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Nexys-A7-100T-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1583534507"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
