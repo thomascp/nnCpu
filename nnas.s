@@ -15,6 +15,9 @@
 	# r8 imm 16
 	add		r8, r0, r0
 	luil		r8, 16
+	# r9 imm 20
+	add		r9, r0, r0
+	luil		r9, 20
 
 	# set initial value
 	luil		r1, 0
@@ -60,9 +63,9 @@ LEFT_MOVE:
 	add		r2, r0, r0
 	luil		r2, 0xffff
 	and		r3, r2, r1
-	sub		r3, r3, r7
+	sub		r3, r3, r9
 	lrs		r2, r1, r8
-	sub		r2, r2, r7
+	sub		r2, r2, r9
 	lls		r2, r2, r8
 	or		r1, r2, r3
 	str		r1, r5, r0
@@ -77,9 +80,9 @@ RIGHT_MOVE:
 	add		r2, r0, r0
 	luil		r2, 0xffff
 	and		r3, r2, r1
-	add		r3, r3, r7
+	add		r3, r3, r9
 	lrs		r2, r1, r8
-	add		r2, r2, r7
+	add		r2, r2, r9
 	lls		r2, r2, r8
 	or		r1, r2, r3
 	str		r1, r5, r0
@@ -94,9 +97,9 @@ UP_MOVE:
 	add		r2, r0, r0
 	luil		r2, 0xffff
 	and		r3, r2, r1
-	sub		r3, r3, r7
+	sub		r3, r3, r9
 	lrs		r2, r1, r8
-	sub		r2, r2, r7
+	sub		r2, r2, r9
 	lls		r2, r2, r8
 	or		r1, r2, r3
 	str		r1, r6, r0
@@ -111,9 +114,9 @@ DOWN_MOVE:
 	add		r2, r0, r0
 	luil		r2, 0xffff
 	and		r3, r2, r1
-	add		r3, r3, r7
+	add		r3, r3, r9
 	lrs		r2, r1, r8
-	add		r2, r2, r7
+	add		r2, r2, r9
 	lls		r2, r2, r8
 	or		r1, r2, r3
 	str		r1, r6, r0

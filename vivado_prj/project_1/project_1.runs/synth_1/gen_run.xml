@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1583536258">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1583570989">
   <File Type="VDS-TIMING-PB" Name="nexys_a7_nnCpu_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="nexys_a7_nnCpu_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="nexys_a7_nnCpu.dcp"/>
@@ -14,7 +14,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/nnRv.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../nnRv.v"/>
-        <Attr Name="ImportTime" Val="1583534196"/>
+        <Attr Name="ImportTime" Val="1583570943"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -23,7 +23,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/vga800x600.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../vga800x600.v"/>
-        <Attr Name="ImportTime" Val="1583529611"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -32,7 +32,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/vgaTop.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../vgaTop.v"/>
-        <Attr Name="ImportTime" Val="1583533772"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,7 +41,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/nexys-a7-vga.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../nexys-a7-vga.v"/>
-        <Attr Name="ImportTime" Val="1583534546"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -74,9 +74,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1583536472">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1583571214">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="nexys_a7_nnCpu.drc"/>
   <File Type="BG-BGN" Name="nexys_a7_nnCpu.bgn"/>
@@ -74,7 +74,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/nnRv.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../nnRv.v"/>
-        <Attr Name="ImportTime" Val="1583534196"/>
+        <Attr Name="ImportTime" Val="1583570943"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -83,7 +83,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/vga800x600.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../vga800x600.v"/>
-        <Attr Name="ImportTime" Val="1583529611"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -92,7 +92,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/vgaTop.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../vgaTop.v"/>
-        <Attr Name="ImportTime" Val="1583533772"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -101,7 +101,7 @@
     <File Path="$PSRCDIR/sources_1/imports/nnCpu/nexys-a7-vga.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../nexys-a7-vga.v"/>
-        <Attr Name="ImportTime" Val="1583534546"/>
+        <Attr Name="ImportTime" Val="1583570270"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -134,9 +134,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
