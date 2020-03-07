@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Mar  7 00:19:28 2020
-# Process ID: 29355
+# Start of session at: Sat Mar  7 09:57:59 2020
+# Process ID: 9579
 # Current directory: /home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.runs/impl_1
 # Command line: vivado -log nexys_a7_nnCpu.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source nexys_a7_nnCpu.tcl -notrace
 # Log file: /home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.runs/impl_1/nexys_a7_nnCpu.vdi
