@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Thu Mar  5 22:15:28 2020
+| Date         : Sat Mar  7 09:25:57 2020
 | Host         : neo-VirtualBox running 64-bit Ubuntu 16.04.6 LTS
 | Command      : report_timing_summary -max_paths 10 -file nexys_a7_nnCpu_timing_summary_routed.rpt -pb nexys_a7_nnCpu_timing_summary_routed.pb -rpx nexys_a7_nnCpu_timing_summary_routed.rpx -warn_on_violation
 | Design       : nexys_a7_nnCpu

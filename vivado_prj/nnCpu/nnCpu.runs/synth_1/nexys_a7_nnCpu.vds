@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Mar  5 22:07:27 2020
-# Process ID: 30807
+# Start of session at: Sat Mar  7 09:18:58 2020
+# Process ID: 5285
 # Current directory: /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.runs/synth_1
 # Command line: vivado -log nexys_a7_nnCpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_a7_nnCpu.tcl
 # Log file: /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.runs/synth_1/nexys_a7_nnCpu.vds
@@ -16,22 +16,22 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30833 
+INFO: Helper process launched with PID 5311 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1707.961 ; gain = 152.715 ; free physical = 1049 ; free virtual = 3096
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1707.961 ; gain = 152.715 ; free physical = 1003 ; free virtual = 4248
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'nexys_a7_nnCpu' [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nexys-a7.v:2]
 INFO: [Synth 8-6157] synthesizing module 'nnRvSoc' [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:34]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:138]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:147]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:161]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:175]
-WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:193]
-WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:195]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:142]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:151]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:165]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:179]
+WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:197]
+WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:199]
 INFO: [Synth 8-6155] done synthesizing module 'nnRvSoc' (1#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v:34]
 INFO: [Synth 8-6155] done synthesizing module 'nexys_a7_nnCpu' (2#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nexys-a7.v:2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1781.711 ; gain = 226.465 ; free physical = 1037 ; free virtual = 3086
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1781.711 ; gain = 226.465 ; free physical = 991 ; free virtual = 4237
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -44,10 +44,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1799.523 ; gain = 244.277 ; free physical = 1044 ; free virtual = 3093
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1799.523 ; gain = 244.277 ; free physical = 999 ; free virtual = 4244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1799.523 ; gain = 244.277 ; free physical = 1044 ; free virtual = 3093
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1799.523 ; gain = 244.277 ; free physical = 999 ; free virtual = 4244
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -59,29 +59,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_a7_nnCpu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1943.094 ; gain = 0.000 ; free physical = 908 ; free virtual = 2956
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1943.094 ; gain = 0.000 ; free physical = 863 ; free virtual = 4108
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1943.094 ; gain = 0.000 ; free physical = 908 ; free virtual = 2956
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1943.094 ; gain = 0.000 ; free physical = 863 ; free virtual = 4108
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 1017 ; free virtual = 3065
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 972 ; free virtual = 4218
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 1017 ; free virtual = 3065
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 972 ; free virtual = 4218
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 1017 ; free virtual = 3065
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 972 ; free virtual = 4218
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 1001 ; free virtual = 3051
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1943.094 ; gain = 387.848 ; free physical = 958 ; free virtual = 4205
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -164,7 +164,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:29 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 939 ; free virtual = 3001
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:23 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 896 ; free virtual = 4155
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -195,13 +195,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:33 ; elapsed = 00:01:45 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 827 ; free virtual = 2889
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:34 ; elapsed = 00:01:40 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 785 ; free virtual = 4044
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:37 ; elapsed = 00:01:50 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 812 ; free virtual = 2877
+Finished Timing Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:44 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 774 ; free virtual = 4036
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -231,7 +231,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:48 ; elapsed = 00:02:02 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2879
+Finished Technology Mapping : Time (s): cpu = 00:01:49 ; elapsed = 00:01:55 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -255,7 +255,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:53 ; elapsed = 00:02:07 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2879
+Finished IO Insertion : Time (s): cpu = 00:01:54 ; elapsed = 00:02:00 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -268,7 +268,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:53 ; elapsed = 00:02:07 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2879
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:54 ; elapsed = 00:02:01 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -280,25 +280,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:54 ; elapsed = 00:02:08 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2878
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:02:02 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:54 ; elapsed = 00:02:08 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2878
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:02:02 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:05 ; elapsed = 00:02:21 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2878
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:06 ; elapsed = 00:02:13 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 775 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:06 ; elapsed = 00:02:21 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2878
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:06 ; elapsed = 00:02:14 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 774 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -338,18 +338,18 @@ Report Instance Areas:
 |2     |  nnRvSoc |nnRvSoc | 11150|
 +------+----------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:06 ; elapsed = 00:02:21 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 817 ; free virtual = 2878
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:06 ; elapsed = 00:02:14 . Memory (MB): peak = 1967.094 ; gain = 411.848 ; free physical = 774 ; free virtual = 4034
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1967.094 ; gain = 268.277 ; free physical = 870 ; free virtual = 2932
-Synthesis Optimization Complete : Time (s): cpu = 00:02:06 ; elapsed = 00:02:21 . Memory (MB): peak = 1967.102 ; gain = 411.848 ; free physical = 884 ; free virtual = 2946
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:58 ; elapsed = 00:02:05 . Memory (MB): peak = 1967.094 ; gain = 268.277 ; free physical = 827 ; free virtual = 4086
+Synthesis Optimization Complete : Time (s): cpu = 00:02:07 ; elapsed = 00:02:14 . Memory (MB): peak = 1967.102 ; gain = 411.848 ; free physical = 827 ; free virtual = 4086
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 806 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'nexys_a7_nnCpu' is not ideal for floorplanning, since the cellview 'nnRvSoc' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1967.102 ; gain = 0.000 ; free physical = 826 ; free virtual = 2888
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1967.102 ; gain = 0.000 ; free physical = 784 ; free virtual = 4043
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 256 instances were transformed.
   RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, MUXF7, MUXF7, RAMD64E, RAMD64E): 256 instances
@@ -357,10 +357,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 20 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:17 ; elapsed = 00:02:33 . Memory (MB): peak = 1967.102 ; gain = 583.023 ; free physical = 928 ; free virtual = 2990
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1967.102 ; gain = 0.000 ; free physical = 928 ; free virtual = 2990
+synth_design: Time (s): cpu = 00:02:17 ; elapsed = 00:02:24 . Memory (MB): peak = 1967.102 ; gain = 580.055 ; free physical = 886 ; free virtual = 4145
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1967.102 ; gain = 0.000 ; free physical = 886 ; free virtual = 4145
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.runs/synth_1/nexys_a7_nnCpu.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file nexys_a7_nnCpu_utilization_synth.rpt -pb nexys_a7_nnCpu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  5 22:10:14 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  7 09:21:36 2020...

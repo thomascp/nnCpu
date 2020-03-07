@@ -30,7 +30,6 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.0 [current_project]
 set_property ip_output_repo /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_mem /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/test.mem
 read_verilog -library xil_defaultlib {
   /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nnRv.v
   /home/neo/disk/fpga/nnCpu/vivado_prj/nnCpu/nnCpu.srcs/sources_1/imports/nnCpu/nexys-a7.v

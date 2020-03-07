@@ -4,13 +4,13 @@ clean:
 	rm -rf nnRv
 	rm -rf test
 	rm -rf test.vcd
+	rm -rf nnRv.v
 
-nnRv_sim:
-	iverilog -o nnRv nnRv.v test.v
+nnRv:
+	python ram_init_proc.py
 
 nnas:
 	python nnasm.py
 
-sim: nnas nnRv_sim
-	vvp nnRv
-	gtkwave test.vcd &
+nexys-a7: nnas nnRv
+	@echo 'all done! now you can start vivado'

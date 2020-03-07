@@ -22,26 +22,6 @@ module nexys_a7_nnCpu
 		end
 	end
 
-	// assign LED[0] = count[23];
-	// assign LED[1] = CLK;
-	// assign LED[2] = RST_N;
-	// assign LED[3] = BTNL;
-	// assign LED[4] = BTNR;
-	
-	//reg [31:0] RAM [7:0];
-	//initial
-	//begin
-	//   RAM[0] = 32'hffff5a5a;
-	//end
-	//
-	//reg [31:0] RAMFF = 0;
-	//
-	//always@(posedge CLK)
-	//begin
-	//   RAMFF <= RAM[0];
-	//end
-	//assign LED = RAMFF[7:0];
-
 	nnRvSoc nnRvSoc(RST_N, CLK, {BTNR, BTNL}, LED);
 
 endmodule
