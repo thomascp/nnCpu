@@ -198,7 +198,6 @@ ssCode = []
 alg_num = 0
 
 alg_oper = ['add', 'sub', 'cmpeq', 'cmpne', 'cmpgt', 'cmplt', 'cmpge', 'cmple', 'and', 'or', 'not', 'neg']
-pointer_oper = ['str_pop', 'ldr_push']
 
 siFile = open('nnas.s.i')
 siLines = siFile.readlines()
@@ -228,7 +227,7 @@ for code in siLines:
 		function_ret(code)
 	elif code[0] == '$':
 		call_function(code)
-	elif code[0:7] in pointer_oper:
+	elif code[0:7] == 'str_pop' or code[0:8] == 'ldr_push':
 		pointer_operation(code)
 	else:
 		print ('unknown code ' + code)

@@ -21,11 +21,24 @@ nnas: parser.y scanner.l
 	gcc -c -o lex.yy.o lex.yy.c
 	gcc -c -o y.tab.o y.tab.c
 	gcc -o tcc lex.yy.o y.tab.o
-	./tcc < nnc.c > nnas.s.i
+	./tcc < nexys-a7.c > nnas.s.i
 	python nnmacro.py
 	python nnasm.py
 
-nexys-a7-vga: nnas nnRv
+nnas-vga: parser.y scanner.l
+	bison -vdty parser.y
+	flex scanner.l
+	gcc -c -o lex.yy.o lex.yy.c
+	gcc -c -o y.tab.o y.tab.c
+	gcc -o tcc lex.yy.o y.tab.o
+	./tcc < nexys-a7-vga.c > nnas.s.i
+	python nnmacro.py
+	python nnasm.py
+
+nexys-a7-vga: nnas-vga nnRv
+	@echo 'all done! now you can start vivado'
+
+nexys-a7: nnas nnRv
 	@echo 'all done! now you can start vivado'
 
 sim: nnas nnRv nnRv_sim

@@ -8,13 +8,13 @@ module nexys_a7_nnCpu
 	reg RST_N = 0;
 	reg CLK = 0;
 	reg [1:0] count = 0;
-	wire [31:0] vga_x;
-	wire [31:0] vga_y;
-	wire BTND;
-	wire BTNU;
-	wire BTNR;
-	wire BTNL;
+	reg BTND = 0;
+	reg BTNU = 0;
+	reg BTNR = 1;
+	reg BTNL = 0;
 	wire [7:0] LED;
+	wire [31:0] vga_x [1:0];
+	wire [31:0] vga_y [1:0];
 	reg  CLK100MHZ = 0;
 
 	integer i;
@@ -31,6 +31,18 @@ module nexys_a7_nnCpu
 			#(1) CLK100MHZ = !CLK100MHZ;
 	end
 
+	initial
+	begin
+		#10000 BTNR = 1; BTNL = 0;
+		#10000 BTNR = 0; BTNL = 1;
+		#10000 BTNR = 1; BTNL = 0;
+		#10000 BTNR = 0; BTNL = 1;
+		#10000 BTNR = 1; BTNL = 0;
+		#10000 BTNR = 0; BTNL = 1;
+		#10000 BTNR = 1; BTNL = 0;
+		#10000 BTNR = 0; BTNL = 1;
+	end
+
 	always @ (posedge(CLK100MHZ))
 	begin
 		count <= count + 1;
@@ -42,7 +54,7 @@ module nexys_a7_nnCpu
 		end
 	end
 
-	nnRvSoc nnRvSoc(RST_N, CLK, {BTND, BTNU, BTNR, BTNL}, LED, vga_x, vga_y);
+	nnRvSoc nnRvSoc(RST_N, CLK, {BTND, BTNU, BTNR, BTNL}, LED, vga_x[0], vga_y[0], vga_x[1], vga_y[1]);
 
 endmodule
 

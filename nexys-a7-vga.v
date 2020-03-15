@@ -18,8 +18,8 @@ module nexys_a7_nnCpu
 	reg VGA_RST = 0;
 	reg CLK = 0;
 	reg [15:0] count = 0;
-	wire [31:0] vga_x;
-	wire [31:0] vga_y;
+	wire [31:0] vga_x[1:0];
+	wire [31:0] vga_y[1:0];
 
 	always @ (posedge(CLK100MHZ))
 	begin
