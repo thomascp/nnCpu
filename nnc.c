@@ -2,7 +2,7 @@
 void main()
 {
 	int i;
-	i = 0;
+	i = 1;
 
 	while (1)
 	{
@@ -14,7 +14,7 @@ void main()
 int setled(int i)
 {
 	int *p;
-	p = 2147483652;
+	p = 0x80000004;
 	*p = i;
 	return;
 }
