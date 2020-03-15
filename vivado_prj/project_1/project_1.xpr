@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="afe234cc873c45168a2dea69275a08a0"/>
+    <Option Name="Id" Val="1f100554a60b43f094f2f4aa2bbc24e6"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -63,7 +63,7 @@
       <File Path="$PSRCDIR/sources_1/imports/nnCpu/nnRv.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../nnRv.v"/>
-          <Attr Name="ImportTime" Val="1583570943"/>
+          <Attr Name="ImportTime" Val="1584292436"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -72,7 +72,7 @@
       <File Path="$PSRCDIR/sources_1/imports/nnCpu/vga800x600.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../vga800x600.v"/>
-          <Attr Name="ImportTime" Val="1583570270"/>
+          <Attr Name="ImportTime" Val="1584139549"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -81,7 +81,7 @@
       <File Path="$PSRCDIR/sources_1/imports/nnCpu/vgaTop.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../vgaTop.v"/>
-          <Attr Name="ImportTime" Val="1583570270"/>
+          <Attr Name="ImportTime" Val="1584282730"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -90,7 +90,7 @@
       <File Path="$PSRCDIR/sources_1/imports/nnCpu/nexys-a7-vga.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../nexys-a7-vga.v"/>
-          <Attr Name="ImportTime" Val="1583570270"/>
+          <Attr Name="ImportTime" Val="1584288255"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -107,7 +107,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/nnCpu/Nexys-A7-100T-Master.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Nexys-A7-100T-Master.xdc"/>
-          <Attr Name="ImportTime" Val="1583534507"/>
+          <Attr Name="ImportTime" Val="1584139549"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -117,7 +117,6 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="nexys_a7_nnCpu"/>
@@ -162,7 +161,9 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -171,7 +172,9 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sat Mar  7 09:52:45 2020
+| Date         : Sun Mar 15 18:20:45 2020
 | Host         : neo-VirtualBox running 64-bit Ubuntu 16.04.6 LTS
 | Command      : report_utilization -file nexys_a7_nnCpu_utilization_synth.rpt -pb nexys_a7_nnCpu_utilization_synth.pb
 | Design       : nexys_a7_nnCpu
@@ -27,20 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 9888 |     0 |     63400 | 15.60 |
-|   LUT as Logic             | 8864 |     0 |     63400 | 13.98 |
-|   LUT as Memory            | 1024 |     0 |     19000 |  5.39 |
-|     LUT as Distributed RAM | 1024 |     0 |           |       |
-|     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            | 1208 |     0 |    126800 |  0.95 |
-|   Register as Flip Flop    | 1208 |     0 |    126800 |  0.95 |
-|   Register as Latch        |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                   | 1061 |     0 |     31700 |  3.35 |
-| F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| Slice LUTs*                | 14334 |     0 |     63400 | 22.61 |
+|   LUT as Logic             | 12286 |     0 |     63400 | 19.38 |
+|   LUT as Memory            |  2048 |     0 |     19000 | 10.78 |
+|     LUT as Distributed RAM |  2048 |     0 |           |       |
+|     LUT as Shift Register  |     0 |     0 |           |       |
+| Slice Registers            |  1232 |     0 |    126800 |  0.97 |
+|   Register as Flip Flop    |  1232 |     0 |    126800 |  0.97 |
+|   Register as Latch        |     0 |     0 |    126800 |  0.00 |
+| F7 Muxes                   |  1536 |     0 |     31700 |  4.85 |
+| F8 Muxes                   |    64 |     0 |     15850 |  0.40 |
++----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1208  |          Yes |       Reset |            - |
+| 1232  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,17 +148,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 6153 |                 LUT |
-| LUT5     | 1910 |                 LUT |
-| FDRE     | 1208 |        Flop & Latch |
-| MUXF7    | 1061 |               MuxFx |
-| RAMD64E  | 1024 |  Distributed Memory |
-| LUT4     |  960 |                 LUT |
-| LUT3     |  378 |                 LUT |
-| LUT2     |  342 |                 LUT |
-| CARRY4   |   51 |          CarryLogic |
+| LUT6     | 8607 |                 LUT |
+| LUT3     | 3218 |                 LUT |
+| RAMD64E  | 2048 |  Distributed Memory |
+| LUT5     | 1657 |                 LUT |
+| MUXF7    | 1536 |               MuxFx |
+| FDRE     | 1232 |        Flop & Latch |
+| LUT4     |  321 |                 LUT |
+| LUT2     |  192 |                 LUT |
+| CARRY4   |   71 |          CarryLogic |
+| MUXF8    |   64 |               MuxFx |
 | OBUF     |   22 |                  IO |
-| LUT1     |   10 |                 LUT |
+| LUT1     |   12 |                 LUT |
 | IBUF     |    5 |                  IO |
 | BUFG     |    2 |               Clock |
 +----------+------+---------------------+
