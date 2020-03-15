@@ -30,22 +30,22 @@ cmdParse = {
 	'luil': {'num':3, 'type':'I', 'mop':MOP_UIMM, 'sop':SOP_UIMM_L},
 	'luih': {'num':3, 'type':'I', 'mop':MOP_UIMM, 'sop':SOP_UIMM_H},
 
-	'add' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_ADD},
-	'sub' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_SUB},
-	'lls' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_LLS},
-	'lrs' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_LRS},
-	'ars' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_ARS},
-	'and' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_AND},
-	'or'  : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_OR },
-	'xor' : {'num':4, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_XOR},
+	'add' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_ADD},
+	'sub' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_SUB},
+	'lls' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_LLS},
+	'lrs' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_LRS},
+	'ars' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_ARS},
+	'and' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_AND},
+	'or'  : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_OR },
+	'xor' : {'num':5, 'type':'R', 'mop':MOP_LOGI, 'sop':SOP_LOGI_XOR},
 
-	'ldr' : {'num':4, 'type':'R', 'mop':MOP_MEMY, 'sop':SOP_MEMY_L},
-	'str' : {'num':4, 'type':'R', 'mop':MOP_MEMY, 'sop':SOP_MEMY_S},
+	'ldr' : {'num':5, 'type':'R', 'mop':MOP_MEMY, 'sop':SOP_MEMY_L},
+	'str' : {'num':5, 'type':'R', 'mop':MOP_MEMY, 'sop':SOP_MEMY_S},
 
-	'jeq' : {'num':4, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_EQ},
-	'jne' : {'num':4, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_NE},
-	'jlt' : {'num':4, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_LT},
-	'jge' : {'num':4, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_GE},
+	'jeq' : {'num':5, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_EQ},
+	'jne' : {'num':5, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_NE},
+	'jlt' : {'num':5, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_LT},
+	'jge' : {'num':5, 'type':'R', 'mop':MOP_JUMP, 'sop':SOP_JUMP_GE},
 }
 
 asFile = open('nnas.s')
@@ -66,6 +66,13 @@ for cmd in asLines:
 		continue
 	if cmdList[0][0] == '#':
 		continue
+	if cmdList[0] == ".data":
+		if len(cmdList) != 2:
+			print ('Error format, ', cmdList, 'should add data')
+			sys.exit(1)
+		assCode.append(int(cmdList[1], 0))
+		cmdAddr = cmdAddr + 4
+		continue
 	if cmdList[0] not in cmdParse.keys():
 		print ('Error format oper, ', cmdList)
 		sys.exit(1)
@@ -78,7 +85,11 @@ for cmd in asLines:
 		rd   = int(cmdList[1].replace(',', '').replace('r', ''))
 		rs1  = int(cmdList[2].replace(',', '').replace('r', ''))
 		rs2  = int(cmdList[3].replace(',', '').replace('r', ''))
-		assCode.append(oper << 24 | rd << 19 | rs1 << 14 | rs2 << 9)
+		sImm = int(cmdList[4].replace(',', '').replace('r', ''), 0)
+		if sImm > 255 or sImm < -256:
+			print ('Error format sImm, ', cmdList)
+			sys.exit(1)
+		assCode.append(oper << 24 | rd << 19 | rs1 << 14 | rs2 << 9 | (sImm & 0x1ff))
 		cmdAddr = cmdAddr + 4
 	if cmdParseDict['type'] == 'I':
 		oper = cmdParseDict['mop'] << 5 | cmdParseDict['sop'] << 0

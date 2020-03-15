@@ -73,9 +73,12 @@ module nnRvSoc
 		begin
 			REG[i] = 32'd0;
 		end
+		REG[30] = (`RAM_SIZE - 1) * 4;
 		jump_pc = 32'd0;
 	end
 
+	wire [31:0] ALL0	= 0;
+	wire [31:0] ALL1	= -1;
 	wire [31:0] instr	= RAM[REG[31][31:2]];
 
 	wire [7:0]  instr_oper	= instr[31:24];
@@ -83,18 +86,22 @@ module nnRvSoc
 	wire [4:0]  instr_rs1	= instr[18:14];
 	wire [4:0]  instr_rs2	= instr[13:9];
 	wire [15:0] instr_uimm	= instr[15:0];
+	wire [31:0] instr_simm  = { instr[8] ? ALL1[31:9]:ALL0[31:9], instr[8:0] };
+	wire [31:0] instr_calc_rs2
+				= REG[instr_rs2] + instr_simm;
 
 	wire [2:0]  oper_mop	= instr_oper[7:5];
 	wire [4:0]  oper_sop	= instr_oper[4:0];
 
-	wire [31:0] ldr_str_addr= REG[instr_rs1] + REG[instr_rs2];
+	wire [31:0] ldr_str_addr= REG[instr_rs1] + instr_calc_rs2;
+	wire [31:0] jump_addr	= REG[instr_rd] + instr_simm;
 
 	wire memory_stall = 0;
 	wire jump_stall = (oper_mop == `MOP_JUMP) && (
-				((oper_sop == `SOP_JUMP_EQ) && (REG[instr_rs1] == REG[instr_rs2])) ||
-				((oper_sop == `SOP_JUMP_NE) && (REG[instr_rs1] != REG[instr_rs2])) ||
-				((oper_sop == `SOP_JUMP_LT) && (REG[instr_rs1] <  REG[instr_rs2])) ||
-				((oper_sop == `SOP_JUMP_GE) && (REG[instr_rs1] >= REG[instr_rs2]))
+				((oper_sop == `SOP_JUMP_EQ) && (REG[instr_rs1] == instr_calc_rs2)) ||
+				((oper_sop == `SOP_JUMP_NE) && (REG[instr_rs1] != instr_calc_rs2)) ||
+				((oper_sop == `SOP_JUMP_LT) && (REG[instr_rs1] <  instr_calc_rs2)) ||
+				((oper_sop == `SOP_JUMP_GE) && (REG[instr_rs1] >= instr_calc_rs2))
 				);
 	wire stall = jump_stall | memory_stall;
 
@@ -102,7 +109,7 @@ module nnRvSoc
 	begin
 		if (RST_N)
 		begin
-			if (oper_mop == `MOP_UIMM)
+			if (oper_mop == `MOP_UIMM && instr_rd != 0)
 			begin
 				case (oper_sop)
 					`SOP_UIMM_L	: REG[instr_rd][15:0]  <= instr_uimm;
@@ -111,31 +118,31 @@ module nnRvSoc
 
 			end
 
-			if (oper_mop == `MOP_LOGI)
+			if (oper_mop == `MOP_LOGI && instr_rd != 0)
 			begin
 				case (oper_sop)
-					`SOP_LOGI_ADD	: REG[instr_rd] <= REG[instr_rs1] +   REG[instr_rs2];
-					`SOP_LOGI_SUB	: REG[instr_rd] <= REG[instr_rs1] -   REG[instr_rs2];
-					`SOP_LOGI_LLS	: REG[instr_rd] <= REG[instr_rs1] <<  REG[instr_rs2];
-					`SOP_LOGI_LRS	: REG[instr_rd] <= REG[instr_rs1] >>  REG[instr_rs2];
-					`SOP_LOGI_ARS	: REG[instr_rd] <= REG[instr_rs1] >>> REG[instr_rs2];
-					`SOP_LOGI_AND	: REG[instr_rd] <= REG[instr_rs1] & REG[instr_rs2];
-					`SOP_LOGI_OR	: REG[instr_rd] <= REG[instr_rs1] | REG[instr_rs2];
-					`SOP_LOGI_XOR	: REG[instr_rd] <= REG[instr_rs1] ^ REG[instr_rs2];
+					`SOP_LOGI_ADD	: REG[instr_rd] <= REG[instr_rs1] +   instr_calc_rs2;
+					`SOP_LOGI_SUB	: REG[instr_rd] <= REG[instr_rs1] -   instr_calc_rs2;
+					`SOP_LOGI_LLS	: REG[instr_rd] <= REG[instr_rs1] <<  instr_calc_rs2;
+					`SOP_LOGI_LRS	: REG[instr_rd] <= REG[instr_rs1] >>  instr_calc_rs2;
+					`SOP_LOGI_ARS	: REG[instr_rd] <= REG[instr_rs1] >>> instr_calc_rs2;
+					`SOP_LOGI_AND	: REG[instr_rd] <= REG[instr_rs1] & instr_calc_rs2;
+					`SOP_LOGI_OR	: REG[instr_rd] <= REG[instr_rs1] | instr_calc_rs2;
+					`SOP_LOGI_XOR	: REG[instr_rd] <= REG[instr_rs1] ^ instr_calc_rs2;
 				endcase
 			end
 
 			if (oper_mop == `MOP_JUMP && jump_stall)
 			begin
 				case (oper_sop)
-					`SOP_JUMP_EQ	: if (REG[instr_rs1] == REG[instr_rs2]) 
-								jump_pc = REG[instr_rd];
-					`SOP_JUMP_NE	: if (REG[instr_rs1] != REG[instr_rs2]) 
-								jump_pc = REG[instr_rd];
-					`SOP_JUMP_LT	: if (REG[instr_rs1] <  REG[instr_rs2]) 
-								jump_pc = REG[instr_rd];
-					`SOP_JUMP_GE	: if (REG[instr_rs1] >= REG[instr_rs2]) 
-								jump_pc = REG[instr_rd];
+					`SOP_JUMP_EQ	: if (REG[instr_rs1] == REG[instr_rs2])
+								jump_pc = jump_addr;
+					`SOP_JUMP_NE	: if (REG[instr_rs1] != REG[instr_rs2])
+								jump_pc = jump_addr;
+					`SOP_JUMP_LT	: if (REG[instr_rs1] <  REG[instr_rs2])
+								jump_pc = jump_addr;
+					`SOP_JUMP_GE	: if (REG[instr_rs1] >= REG[instr_rs2])
+								jump_pc = jump_addr;
 				endcase
 			end
 
@@ -143,6 +150,8 @@ module nnRvSoc
 			begin
 				case (oper_sop)
 					`SOP_MEMY_L	:
+							if (instr_rd != 0)
+							begin
 							if (ldr_str_addr == `PF_KEY_IN)
 								REG[instr_rd] <= {28'd0, KEY};
 							else if (ldr_str_addr == `PF_LED_OUT)
@@ -153,6 +162,7 @@ module nnRvSoc
 								REG[instr_rd] <= VGA_Y_OUTPUT;
 							else
 								REG[instr_rd] <= RAM[ldr_str_addr[31:2]];
+							end
 
 					`SOP_MEMY_S	:
 							if (ldr_str_addr == `PF_LED_OUT)
