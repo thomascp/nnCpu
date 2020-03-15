@@ -129,13 +129,13 @@ nexys-a7-vga uses BTNR, BTNL, BTNU, BTND to control a red square which will show
 
 ```
 on sim-isa-0p2 branch, you can both
-make sim
+$ make sim
 It will build project, and then open wave file by using gtkwave.
-make nexys-a7
+$ make nexys-a7
 It will build project, when it is done successfully, you can open a vivado project, add nexys-a7.v,
 nnRv.v to the project, build it, then load it to FPGA.
 You will see LED is flashing, and its behavior is controlled by the BTNR and BTNL button.
-make nexys-a7-vga
+$ make nexys-a7-vga
 It will build project, when it is done successfully, you can open a vivado project, add nexys-a7-vga.v,
 nnRv.v, vgaTop.v, vga800x600.v to the project, build it, then load it to FPGA.
 A game will be shown on the VGA screen, use BTNR, BTNL to controll the green pad to catch the red ball.
