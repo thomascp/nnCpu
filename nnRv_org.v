@@ -1,5 +1,5 @@
 
-`define RAM_SIZE	1024
+`define RAM_SIZE	2048
 `define REG_NUM		32
 `define REG_SIZE	4
 

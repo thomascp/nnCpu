@@ -10,8 +10,10 @@ module vgaTop(
     output wire [3:0] VGA_R,    // 4-bit VGA red output
     output wire [3:0] VGA_G,    // 4-bit VGA green output
     output wire [3:0] VGA_B,    // 4-bit VGA blue output
-    input  wire [31:0] vga_x [1:0],
-    input  wire [31:0] vga_y [1:0]
+    input  wire [31:0] vga_x_r,
+    input  wire [31:0] vga_y_r,
+    input  wire [31:0] vga_x_g,
+    input  wire [31:0] vga_y_g
     );
 
     // wire rst = ~RST_BTN;    // reset is active low on Arty & Nexys Video
@@ -36,11 +38,11 @@ module vgaTop(
         .o_y(y)
     );
 
-    wire sq_a;
-    wire sq_b;
-    assign sq_a = ((x > vga_x[15:0][0]) & (y > vga_y[15:0][0]) & (x < vga_x[31:16][0]) & (y < vga_y[31:16][0])) ? 1 : 0;
-    assign sq_b = ((x > vga_x[15:0][1]) & (y > vga_y[15:0][1]) & (x < vga_x[31:16][1]) & (y < vga_y[31:16][1])) ? 1 : 0;
+    wire sq_r;
+    wire sq_g;
+    assign sq_r = ((x > vga_x_r[31:16]) & (y > vga_y_r[31:16]) & (x < vga_x_r[15:0]) & (y < vga_y_r[15:0])) ? 1 : 0;
+    assign sq_g = ((x > vga_x_g[31:16]) & (y > vga_y_g[31:16]) & (x < vga_x_g[15:0]) & (y < vga_y_g[15:0])) ? 1 : 0;
 
-    assign VGA_R[3] = sq_a;
-    assign VGA_G[3] = sq_b;
+    assign VGA_R[3] = sq_r;
+    assign VGA_G[3] = sq_g;
 endmodule

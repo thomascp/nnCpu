@@ -1,0 +1,465 @@
+
+*** Running vivado
+    with args -log nexys_a7_nnCpu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_a7_nnCpu.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source nexys_a7_nnCpu.tcl -notrace
+Command: synth_design -top nexys_a7_nnCpu -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22711 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1707.121 ; gain = 153.715 ; free physical = 3213 ; free virtual = 4999
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys_a7_nnCpu' [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nexys-a7-vga.v:2]
+INFO: [Synth 8-6157] synthesizing module 'nnRvSoc' [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:38]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1392]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1401]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1415]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1429]
+WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1466]
+WARNING: [Synth 8-6090] variable 'REG' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:1468]
+INFO: [Synth 8-6155] done synthesizing module 'nnRvSoc' (1#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nnRv.v:38]
+INFO: [Synth 8-6157] synthesizing module 'vgaTop' [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vgaTop.v:5]
+INFO: [Synth 8-6157] synthesizing module 'vga800x600' [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vga800x600.v:8]
+	Parameter HS_STA bound to: 40 - type: integer 
+	Parameter HS_END bound to: 168 - type: integer 
+	Parameter HA_STA bound to: 256 - type: integer 
+	Parameter VS_STA bound to: 601 - type: integer 
+	Parameter VS_END bound to: 605 - type: integer 
+	Parameter VA_END bound to: 600 - type: integer 
+	Parameter LINE bound to: 1056 - type: integer 
+	Parameter SCREEN bound to: 628 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga800x600' (2#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vga800x600.v:8]
+WARNING: [Synth 8-7023] instance 'display' of module 'vga800x600' has 11 connections declared, but only 7 given [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vgaTop.v:31]
+WARNING: [Synth 8-3848] Net VGA_B in module/entity vgaTop does not have driver. [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vgaTop.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'vgaTop' (3#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/vgaTop.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'nexys_a7_nnCpu' (4#1) [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/sources_1/imports/nnCpu/nexys-a7-vga.v:2]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_R[2]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_R[1]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_R[0]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_G[2]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_G[1]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_G[0]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_B[3]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_B[2]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_B[1]
+WARNING: [Synth 8-3331] design vgaTop has unconnected port VGA_B[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1803.871 ; gain = 250.465 ; free physical = 3182 ; free virtual = 4970
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1823.684 ; gain = 270.277 ; free physical = 3193 ; free virtual = 4980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1823.684 ; gain = 270.277 ; free physical = 3193 ; free virtual = 4980
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/constrs_1/imports/nnCpu/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/constrs_1/imports/nnCpu/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.srcs/constrs_1/imports/nnCpu/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_a7_nnCpu_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_a7_nnCpu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1968.254 ; gain = 0.000 ; free physical = 3045 ; free virtual = 4832
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1968.254 ; gain = 0.000 ; free physical = 3045 ; free virtual = 4832
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1968.254 ; gain = 414.848 ; free physical = 3166 ; free virtual = 4953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1968.254 ; gain = 414.848 ; free physical = 3166 ; free virtual = 4953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1968.254 ; gain = 414.848 ; free physical = 3166 ; free virtual = 4953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1968.254 ; gain = 414.848 ; free physical = 3148 ; free virtual = 4937
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |nnRvSoc__GB0        |           1|     30152|
+|2     |nnRvSoc__GB1        |           1|     11530|
+|3     |nnRvSoc__GB2        |           1|     10143|
+|4     |nnRvSoc__GB3        |           1|     17312|
+|5     |nnRvSoc__GB4        |           1|     24214|
+|6     |nexys_a7_nnCpu__GC0 |           1|      1037|
++------+--------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 38    
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	              64K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 977   
+	  32 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 32    
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 35    
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 18    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module nexys_a7_nnCpu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module nnRvSoc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 38    
++---RAMs : 
+	              64K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 977   
+	  32 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 32    
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 35    
+	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 1     
+Module vga800x600 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+Module vgaTop 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:03:41 . Memory (MB): peak = 1988.184 ; gain = 434.777 ; free physical = 756 ; free virtual = 2565
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------+------------+-----------+----------------------+-------------------+
+|Module Name  | RTL Object | Inference | Size (Depth x Width) | Primitives        | 
++-------------+------------+-----------+----------------------+-------------------+
+|nnRvSoc__GB0 | RAM_reg    | Implied   | 2 K x 32             | RAM128X1D x 512   | 
++-------------+------------+-----------+----------------------+-------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |nnRvSoc__GB0        |           1|     33426|
+|2     |nnRvSoc__GB1        |           1|      2663|
+|3     |nnRvSoc__GB2        |           1|      2528|
+|4     |nnRvSoc__GB3        |           1|     12157|
+|5     |nnRvSoc__GB4        |           1|       116|
+|6     |nexys_a7_nnCpu__GC0 |           1|       756|
++------+--------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:03:56 . Memory (MB): peak = 1988.184 ; gain = 434.777 ; free physical = 615 ; free virtual = 2439
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nnRvSoci_1/i_0/\REG_reg[0][31] )
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:57 ; elapsed = 00:04:11 . Memory (MB): peak = 1988.184 ; gain = 434.777 ; free physical = 556 ; free virtual = 2390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-------------+------------+-----------+----------------------+-------------------+
+|Module Name  | RTL Object | Inference | Size (Depth x Width) | Primitives        | 
++-------------+------------+-----------+----------------------+-------------------+
+|nnRvSoc__GB0 | RAM_reg    | Implied   | 2 K x 32             | RAM128X1D x 512   | 
++-------------+------------+-----------+----------------------+-------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |nnRvSoc__GB0        |           1|     32059|
+|2     |nnRvSoc__GB1        |           1|      2663|
+|3     |nnRvSoc__GB2        |           1|      2528|
+|4     |nnRvSoc__GB3        |           1|     11819|
+|5     |nnRvSoc__GB4        |           1|       116|
+|6     |nexys_a7_nnCpu__GC0 |           1|       756|
++------+--------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:10 ; elapsed = 00:05:05 . Memory (MB): peak = 1996.188 ; gain = 442.781 ; free physical = 266 ; free virtual = 2064
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |nnRvSoc__GB0        |           1|      8813|
+|2     |nnRvSoc__GB1        |           1|      2452|
+|3     |nnRvSoc__GB2        |           1|      2030|
+|4     |nnRvSoc__GB3        |           1|      3458|
+|5     |nnRvSoc__GB4        |           1|        67|
+|6     |nexys_a7_nnCpu__GC0 |           1|       251|
++------+--------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:19 ; elapsed = 00:05:14 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 251 ; free virtual = 2062
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:19 ; elapsed = 00:05:15 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:22 ; elapsed = 00:05:17 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:22 ; elapsed = 00:05:17 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:30 ; elapsed = 00:05:26 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:30 ; elapsed = 00:05:26 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    71|
+|3     |LUT1      |    12|
+|4     |LUT2      |   192|
+|5     |LUT3      |  3218|
+|6     |LUT4      |   321|
+|7     |LUT5      |  1657|
+|8     |LUT6      |  8607|
+|9     |MUXF7     |   512|
+|10    |MUXF8     |    64|
+|11    |RAM128X1D |   512|
+|12    |FDRE      |  1232|
+|13    |IBUF      |     5|
+|14    |OBUF      |    22|
++------+----------+------+
+
+Report Instance Areas: 
++------+------------+-----------+------+
+|      |Instance    |Module     |Cells |
++------+------------+-----------+------+
+|1     |top         |           | 16427|
+|2     |  nnRvSoc   |nnRvSoc    | 16177|
+|3     |  vgaTop    |vgaTop     |   199|
+|4     |    display |vga800x600 |   153|
++------+------------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:30 ; elapsed = 00:05:26 . Memory (MB): peak = 1998.203 ; gain = 444.797 ; free physical = 253 ; free virtual = 2064
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:21 ; elapsed = 00:05:17 . Memory (MB): peak = 2002.113 ; gain = 304.137 ; free physical = 3022 ; free virtual = 4833
+Synthesis Optimization Complete : Time (s): cpu = 00:02:31 ; elapsed = 00:05:28 . Memory (MB): peak = 2002.113 ; gain = 448.707 ; free physical = 3026 ; free virtual = 4833
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1159 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'nexys_a7_nnCpu' is not ideal for floorplanning, since the cellview 'nnRvSoc' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2002.113 ; gain = 0.000 ; free physical = 2965 ; free virtual = 4772
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 512 instances were transformed.
+  RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, MUXF7, MUXF7, RAMD64E, RAMD64E): 512 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+57 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:42 ; elapsed = 00:05:40 . Memory (MB): peak = 2002.113 ; gain = 561.055 ; free physical = 3074 ; free virtual = 4881
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2002.113 ; gain = 0.000 ; free physical = 3074 ; free virtual = 4881
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/neo/disk/fpga/nnCpu/vivado_prj/project_1/project_1.runs/synth_1/nexys_a7_nnCpu.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file nexys_a7_nnCpu_utilization_synth.rpt -pb nexys_a7_nnCpu_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 15 18:20:45 2020...
